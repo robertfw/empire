@@ -1,0 +1,22 @@
+#tilegrid {
+  z-index: -1000;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: none;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#tilegrid td {
+    margin: 0;
+    padding: 0;
+}
+
+#tilegrid div {
+    width: 16px;
+    height: 16px;
+    background-color: blue;
+    margin: 0;
+    padding: 0;
+}

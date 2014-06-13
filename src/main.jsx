@@ -12,13 +12,16 @@ var React = require('react'),
     Application = require('./components/Application.jsx'),
 
     AlertStore = require('./stores/AlertStore'),
-    alertActions = require('./actions/AlertActions');
+    alertActions = require('./actions/AlertActions'),
+
+    BrowserSizeStore = require('./stores/BrowserSizeStore');
 
 //export React to window so that React Dev Tools will show up
 window.React = React;
 
 var stores = {
   AlertStore: new AlertStore(),
+  BrowserSizeStore: new BrowserSizeStore()
 };
 
 var actions = _.extend(
