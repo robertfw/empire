@@ -7,6 +7,8 @@
 var React = require('react'),
     Fluxxor = require('fluxxor'),
 
+    GameMap = require('./GameMap'),
+
     _ = require('lodash'),
 
     Application = require('./components/Application.jsx'),
@@ -34,4 +36,6 @@ var flux = new Fluxxor.Flux(stores, actions);
 //export flux so that we can access it easily from the console
 window.flux = flux;
 
-React.renderComponent(<Application flux={flux} />, document.getElementById('react-container'));
+var gamemap = new GameMap(100, 100);
+
+React.renderComponent(<Application flux={flux} gamemap={gamemap} />, document.getElementById('react-container'));

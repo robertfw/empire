@@ -7,8 +7,6 @@
 var React = require('react'),
     Fluxxor = require('fluxxor'),
 
-    GameMap = require('../GameMap'),
-
     TileGrid = require('./TileGrid.jsx'),
 
     WindowSizeWidget = require('./WindowSizeWidget.jsx');
@@ -37,11 +35,15 @@ var Application = React.createClass({
   },
 
   render: function() {
-    var gamemap = new GameMap(100, 100);
-
     return (
       <div>
-        <TileGrid gamemap={gamemap} />
+        <TileGrid
+          gamemap={this.props.gamemap}
+          windowWidth={this.state.windowWidth}
+          windowHeight={this.state.windowHeight}
+          cursor_r={0}
+          cursor_c={0}
+        />
       </div>
     );
   }

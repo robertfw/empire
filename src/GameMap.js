@@ -1,12 +1,9 @@
 'use strict';
 
-var CONS = {
-  SEA: '~',
-  LAND: '.'
-};
-
 var GameMap = function(rows, cols) {
   this.map = [];
+  this.cols = cols;
+  this.rows = rows;
   this.initialize(rows, cols);
 };
 
@@ -15,7 +12,7 @@ GameMap.prototype.initialize = function(rows, cols) {
     this.map[r] = [];
     for(var c = 0; c < cols; c++) {
       this.map[r][c] = {
-        terrain: Math.random() > 0.7 ? CONS.LAND : CONS.SEA,
+        terrain: Math.random() > 0.7 ? '.' : '~',
         unit: null,
         city: null
       };
